@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .myDiv {
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+        }
+        .myText {
+            border: 5px outset green;
+            background-color: orange;
+            text-align: left;
+
+        }
+    </style>
+</head>
+<body>
+<div class="myText">
+<h2>View User</h2>
+</div>
+<div class="myDiv">
+<table>
+
+
+        <tr>
+                <td>Id: <td><td><input type="text" value="${user.id}"/></td>
+		</tr>
+        <tr>
+            <td>Username:<td><td><input type="text" value="${user.username}"/></td>
+		</tr>
+        <tr>
+            <td>Email: <td><td><input type="text" value="${user.email}"/></td>
+		</tr>
+        <tr>
+            <td><input type="button" value="Back" onclick=""></td><td><input type="button" value="Ok"></td>
+		</tr>
+</table>
+<div>
+</body>
+</html>

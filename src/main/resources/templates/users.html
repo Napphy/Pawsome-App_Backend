@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>Users</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    <#list cities as city>
+        <tr>
+            <td>${city.id}</td>
+            <td>${city.name}</td>
+            <td>${city.population}</td>
+            <td><a href="/user">View</a></td>
+        </tr>
+    </#list>
+</table>
+</body>
+</html>
