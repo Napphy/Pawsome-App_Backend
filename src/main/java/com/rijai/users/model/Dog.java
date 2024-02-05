@@ -20,9 +20,8 @@ public class Dog {
     private String size;
     private String description;
     private Date birthday;
-
     @Lob
-    @Column(columnDefinition = "LONG BLOB")
+    @Column(columnDefinition = "LONGBLOB")
     private String image;
 
     public Dog() {
