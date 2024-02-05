@@ -21,10 +21,14 @@ public class Dog {
     private String description;
     private Date birthday;
 
+    @Lob
+    @Column(columnDefinition = "LONG BLOB")
+    private String image;
+
     public Dog() {
     }
 
-    public Dog(int id, String name, int age, String breed, String sex, String size, String description, Date birthday) {
+    public Dog(int id, String name, int age, String breed, String sex, String size, String description, Date birthday, String image) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -33,6 +37,7 @@ public class Dog {
         this.size = size;
         this.description = description;
         this.birthday = birthday;
+        this.image = image;
     }
 
     public int getId() {
@@ -99,17 +104,25 @@ public class Dog {
         this.birthday = birthday;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dog dog = (Dog) o;
-        return id == dog.id && age == dog.age && Objects.equals(name, dog.name) && Objects.equals(breed, dog.breed) && Objects.equals(sex, dog.sex) && Objects.equals(size, dog.size) && Objects.equals(description, dog.description) && Objects.equals(birthday, dog.birthday);
+        return id == dog.id && age == dog.age && Objects.equals(name, dog.name) && Objects.equals(breed, dog.breed) && Objects.equals(sex, dog.sex) && Objects.equals(size, dog.size) && Objects.equals(description, dog.description) && Objects.equals(birthday, dog.birthday) && Objects.equals(image, dog.image);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, age, breed, sex, size, description, birthday);
+        return Objects.hash(id, name, age, breed, sex, size, description, birthday, image);
     }
 
     @Override
@@ -123,6 +136,7 @@ public class Dog {
                 ", size='" + size + '\'' +
                 ", description='" + description + '\'' +
                 ", birthday=" + birthday +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
