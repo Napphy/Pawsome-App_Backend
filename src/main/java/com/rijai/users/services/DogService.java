@@ -3,6 +3,7 @@ package com.rijai.users.services;
 import com.rijai.users.model.Dog;
 import com.rijai.users.repositry.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,8 +18,9 @@ public class DogService {
 
     public List<Dog> getAllDogs()
     {
-        List<Dog>dogRecords = new ArrayList<>();
-        dogRepository.findAll().forEach(dogRecords::add);
+        List <Dog> dogRecords = new ArrayList<>();
+        Streamable.of(dogRepository.findAll())
+                .forEach(dogRecords::add);
         return dogRecords;
     }
 
