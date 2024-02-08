@@ -28,8 +28,24 @@ public class DogService {
         return dogRepository.save(dog);
     }
 
-    public Dog updateDog(Dog dog){
-        return dogRepository.save(dog);
+    public Dog updateDog(int id, Dog updatedDog) {
+        Dog existingDog = dogRepository.findById(id).orElse(null);
+        if (existingDog != null) {
+            // Update the existing dog with the values from the updatedDog object
+            existingDog.setName(updatedDog.getName());
+            existingDog.setAge(updatedDog.getAge());
+            existingDog.setBreed(updatedDog.getBreed());
+            existingDog.setSex(updatedDog.getSex());
+            existingDog.setSize(updatedDog.getSize());
+            existingDog.setBirthday(updatedDog.getBirthday());
+            existingDog.setDescription(updatedDog.getDescription());
+            existingDog.setImage(updatedDog.getImage());
+            // Save the updated dog
+            return dogRepository.save(existingDog);
+        } else {
+            // Handle the case where the dog with the given ID is not found
+            throw new IllegalArgumentException("Dog not found with id: " + id);
+        }
     }
 
     public Dog getDog(int id){

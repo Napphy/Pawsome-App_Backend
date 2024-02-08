@@ -28,9 +28,9 @@ public class DogController {
         return dogService.addDog(dog);
     }
 
-    @PutMapping(value="/update-dog")
-    public Dog updateDog(@RequestBody Dog dog) {
-        return dogService.updateDog(dog);
+    @PutMapping(value="/update-dog/{id}")
+    public Dog updateDog(@PathVariable int id, @RequestBody Dog dog) {
+        return dogService.updateDog(id, dog);
     }
     @DeleteMapping(value="/dogs/{id}")
     public void deleteUser(@PathVariable int id) {
